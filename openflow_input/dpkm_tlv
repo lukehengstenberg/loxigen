@@ -1,0 +1,42 @@
+/* Defines TLVs used in DPKM. */
+
+#version 4
+#version 5
+#version 6
+
+/* Key TLV flags. */
+enum ofp_dpkm_key_flag (wire_type=uint16_t) {
+    OFP_DPKM_KEY_FLAG_PRIVATE_KEY = 0, 
+    OFP_DPKM_KEY_FLAG_PUBLIC_KEY = 1,  
+    OFP_DPKM_KEY_FLAG_DELETE_PEER = 2,
+};
+
+/* Status TLV flags. */
+enum ofp_dpkm_status_flag (wire_type=uint32_t) {
+    OFP_DPKM_STATUS_FLAG_CONFIGURED = 0, 
+    OFP_DPKM_STATUS_FLAG_PEER_ADDED = 1, 
+    OFP_DPKM_STATUS_FLAG_PEER_REMOVED = 2,  
+    OFP_DPKM_STATUS_FLAG_CONNECTED = 3,   
+    OFP_DPKM_STATUS_FLAG_REVOKED = 4,   
+};
+
+
+/* Error TLV flags. */
+enum ofp_dpkm_error_flag (wire_type=uint16_t) {
+    OFP_DPKM_ERROR_DECODE_SET_KEY = 0,     
+    OFP_DPKM_ERROR_DECODE_DELETE_KEY = 1,            
+    OFP_DPKM_ERROR_DECODE_ADD_PEER = 2,     
+    OFP_DPKM_ERROR_DECODE_DELETE_PEER = 3,
+    OFP_DPKM_ERROR_DECODE_GET_STATUS = 4,
+    OFP_DPKM_ERROR_EXECUTE_SET_KEY = 5,
+    OFP_DPKM_ERROR_EXECUTE_DELETE_KEY = 6,
+    OFP_DPKM_ERROR_EXECUTE_ADD_PEER = 7,
+    OFP_DPKM_ERROR_EXECUTE_DELETE_PEER = 8,
+    OFP_DPKM_ERROR_GET_KEY = 9,
+    OFP_DPKM_ERROR_GET_IP_S = 10,
+    OFP_DPKM_ERROR_GET_IP_WG = 11,
+    OFP_DPKM_ERROR_MISSING_KEY = 12,
+    OFP_DPKM_ERROR_MISSING_IP_S = 13,
+    OFP_DPKM_ERROR_MISSING_IP_WG = 14,  
+};
+

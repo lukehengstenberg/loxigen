@@ -735,6 +735,8 @@ exceptions = {
         'of_oxs_flow_count' : { 'value' : u32obj },
         'of_oxs_idle_time' : { 'value' : u64 },
         'of_oxs_packet_count' : { 'value' : u64 },
+        
+        'of_oxm_dpkm_method' : { 'value' : u8obj },
 
         'of_oxm_bsn_in_ports_128' : { 'value': port_bitmap_128 },
         'of_oxm_bsn_in_ports_128_masked' : { 'value': port_bitmap_128, 'value_mask': port_bitmap_128 },

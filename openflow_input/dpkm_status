@@ -1,0 +1,19 @@
+/* Defines status WireGuard message. */
+
+#version 4
+#version 5
+#version 6
+
+struct of_dpkm_status : of_dpkm_header {
+    uint8_t version;
+    uint8_t type == 4;
+    uint16_t length;
+    uint32_t xid;
+    uint32_t experimenter == 0xa20a0323; 
+    uint32_t subtype == 5;
+    enum ofp_dpkm_status_flag status_flag;
+    of_desc_str_t key;
+    of_serial_num_t ipv4_addr; 
+    of_serial_num_t ipv4_wg;
+    of_serial_num_t ipv4_peer;    
+};

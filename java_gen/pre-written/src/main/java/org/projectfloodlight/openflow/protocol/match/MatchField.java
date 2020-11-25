@@ -223,6 +223,9 @@ public class MatchField<F extends OFValueType<F>> {
     public final static MatchField<IPv4Address> TUNNEL_IPV4_DST =
             new MatchField<>("tunnel_ipv4_dst", MatchFields.TUNNEL_IPV4_DST,
                     new Prerequisite<>(MatchField.ETH_TYPE, EthType.IPv4));
+        
+    public final static MatchField<U8> DPKM_METHOD =
+            new MatchField<>("dpkm_method", MatchFields.DPKM_METHOD);
 
     public final static MatchField<OFBitMask128> BSN_IN_PORTS_128 =
             new MatchField<>("bsn_in_ports_128", MatchFields.BSN_IN_PORTS_128);

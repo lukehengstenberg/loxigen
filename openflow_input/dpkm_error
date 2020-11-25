@@ -1,0 +1,169 @@
+/* Defines WireGuard error messages */
+#version 4
+#version 5
+#version 6
+
+struct of_dpkm_decode_set_key_error : of_dpkm_base_error {
+    uint8_t version;
+    uint8_t type == 1;
+    uint16_t length;
+    uint32_t xid;
+    uint16_t err_type == 0xffff;
+    uint16_t subtype == 0;
+    uint32_t experimenter == 0xa20a0323;
+    of_octets_t data;       
+};
+
+struct of_dpkm_decode_delete_key_error : of_dpkm_base_error {
+    uint8_t version;
+    uint8_t type == 1;
+    uint16_t length;
+    uint32_t xid;
+    uint16_t err_type == 0xffff;
+    uint16_t subtype == 1;
+    uint32_t experimenter == 0xa20a0323;
+    of_octets_t data;       
+};
+
+struct of_dpkm_decode_add_peer_error : of_dpkm_base_error {
+    uint8_t version;
+    uint8_t type == 1;
+    uint16_t length;
+    uint32_t xid;
+    uint16_t err_type == 0xffff;
+    uint16_t subtype == 2;
+    uint32_t experimenter == 0xa20a0323;
+    of_octets_t data;       
+};
+
+struct of_dpkm_decode_delete_peer_error : of_dpkm_base_error {
+    uint8_t version;
+    uint8_t type == 1;
+    uint16_t length;
+    uint32_t xid;
+    uint16_t err_type == 0xffff;
+    uint16_t subtype == 3;
+    uint32_t experimenter == 0xa20a0323;
+    of_octets_t data;       
+};
+
+struct of_dpkm_decode_get_status_error : of_dpkm_base_error {
+    uint8_t version;
+    uint8_t type == 1;
+    uint16_t length;
+    uint32_t xid;
+    uint16_t err_type == 0xffff;
+    uint16_t subtype == 4;
+    uint32_t experimenter == 0xa20a0323;
+    of_octets_t data;       
+};
+
+struct of_dpkm_execute_set_key_error : of_dpkm_base_error {
+    uint8_t version;
+    uint8_t type == 1;
+    uint16_t length;
+    uint32_t xid;
+    uint16_t err_type == 0xffff;
+    uint16_t subtype == 5;
+    uint32_t experimenter == 0xa20a0323;
+    of_octets_t data;       
+};
+
+struct of_dpkm_execute_delete_key_error : of_dpkm_base_error {
+    uint8_t version;
+    uint8_t type == 1;
+    uint16_t length;
+    uint32_t xid;
+    uint16_t err_type == 0xffff;
+    uint16_t subtype == 6;
+    uint32_t experimenter == 0xa20a0323;
+    of_octets_t data;       
+};
+
+struct of_dpkm_execute_add_peer_error : of_dpkm_base_error {
+    uint8_t version;
+    uint8_t type == 1;
+    uint16_t length;
+    uint32_t xid;
+    uint16_t err_type == 0xffff;
+    uint16_t subtype == 7;
+    uint32_t experimenter == 0xa20a0323;
+    of_octets_t data;       
+};
+
+struct of_dpkm_execute_delete_peer_error : of_dpkm_base_error {
+    uint8_t version;
+    uint8_t type == 1;
+    uint16_t length;
+    uint32_t xid;
+    uint16_t err_type == 0xffff;
+    uint16_t subtype == 8;
+    uint32_t experimenter == 0xa20a0323;
+    of_octets_t data;       
+};
+
+struct of_dpkm_get_key_error : of_dpkm_base_error {
+    uint8_t version;
+    uint8_t type == 1;
+    uint16_t length;
+    uint32_t xid;
+    uint16_t err_type == 0xffff;
+    uint16_t subtype == 9;
+    uint32_t experimenter == 0xa20a0323;
+    of_octets_t data;       
+};
+
+struct of_dpkm_get_ip_s_error : of_dpkm_base_error {
+    uint8_t version;
+    uint8_t type == 1;
+    uint16_t length;
+    uint32_t xid;
+    uint16_t err_type == 0xffff;
+    uint16_t subtype == 10;
+    uint32_t experimenter == 0xa20a0323;
+    of_octets_t data;       
+};
+
+struct of_dpkm_get_ip_wg_error : of_dpkm_base_error {
+    uint8_t version;
+    uint8_t type == 1;
+    uint16_t length;
+    uint32_t xid;
+    uint16_t err_type == 0xffff;
+    uint16_t subtype == 11;
+    uint32_t experimenter == 0xa20a0323;
+    of_octets_t data;       
+};
+
+struct of_dpkm_missing_key_error : of_dpkm_base_error {
+    uint8_t version;
+    uint8_t type == 1;
+    uint16_t length;
+    uint32_t xid;
+    uint16_t err_type == 0xffff;
+    uint16_t subtype == 12;
+    uint32_t experimenter == 0xa20a0323;
+    of_octets_t data;       
+};
+
+struct of_dpkm_missing_ip_s_error : of_dpkm_base_error {
+    uint8_t version;
+    uint8_t type == 1;
+    uint16_t length;
+    uint32_t xid;
+    uint16_t err_type == 0xffff;
+    uint16_t subtype == 13;
+    uint32_t experimenter == 0xa20a0323;
+    of_octets_t data;       
+};
+
+struct of_dpkm_missing_ip_wg_error : of_dpkm_base_error {
+    uint8_t version;
+    uint8_t type == 1;
+    uint16_t length;
+    uint32_t xid;
+    uint16_t err_type == 0xffff;
+    uint16_t subtype == 14;
+    uint32_t experimenter == 0xa20a0323;
+    of_octets_t data;       
+};

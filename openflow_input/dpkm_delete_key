@@ -1,0 +1,23 @@
+/* Defines action and message for deleting key in WireGuard Interface. */
+
+#version 4
+#version 5
+#version 6
+ 
+struct of_action_dpkm_delete_key : of_action_dpkm {
+    uint16_t type == 65535;
+    uint16_t len;
+    uint32_t experimenter == 0xa20a0323; 
+    uint32_t subtype == 1;
+    of_octets_t data;                
+};
+
+struct of_dpkm_delete_key : of_dpkm_header {
+    uint8_t version;
+    uint8_t type == 4;
+    uint16_t length;
+    uint32_t xid;
+    uint32_t experimenter == 0xa20a0323; 
+    uint32_t subtype == 1;
+    pad(8);               
+};

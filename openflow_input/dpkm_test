@@ -1,0 +1,30 @@
+/* Defines experimenter extensions required by 
+ the key management scheme */
+
+#version 4
+#version 5
+#version 6
+
+// DPKM extension test request message
+struct of_dpkm_test_request : of_dpkm_header {
+    uint8_t version;
+    uint8_t type == 4;
+    uint16_t length;
+    uint32_t xid;
+    uint32_t experimenter == 0xa20a0323; 
+    uint32_t subtype == 7;
+    pad(8);
+    of_octets_t data;
+};
+
+// DPKM extension test response message
+struct of_dpkm_test_reply : of_dpkm_header {
+    uint8_t version;
+    uint8_t type == 4;
+    uint16_t length;
+    uint32_t xid;
+    uint32_t experimenter == 0xa20a0323; 
+    uint32_t subtype == 8;
+    pad(8);
+    of_octets_t data;
+};
