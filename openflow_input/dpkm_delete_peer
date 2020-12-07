@@ -1,19 +1,9 @@
-/* Defines action and message for deleting a peer. */
+/* Defines DPKM message for deleting peer from WG. */
+/* TODO: Reduce size by using key field only after modifying Floodlight/OVS.*/
 
 #version 4
 #version 5
 #version 6
- 
-struct of_action_dpkm_delete_peer : of_action_dpkm {
-    uint16_t type == 65535;
-    uint16_t len;
-    uint32_t experimenter == 0xa20a0323; 
-    uint32_t subtype == 3;               
-    uint8_t payload_size;                
-    uint16_t payload_offset;     
-    uint8_t hashmask;
-    of_octets_t data;                  
-};
 
 struct of_dpkm_delete_peer : of_dpkm_header {
     uint8_t version;
@@ -23,5 +13,7 @@ struct of_dpkm_delete_peer : of_dpkm_header {
     uint32_t experimenter == 0xa20a0323; 
     uint32_t subtype == 3;
     pad(8);
-    of_desc_str_t key;                
+    of_desc_str_t key;
+    of_serial_num_t ipv4_addr; 
+    of_serial_num_t ipv4_wg;                
 };

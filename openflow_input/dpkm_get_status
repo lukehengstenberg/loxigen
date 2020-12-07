@@ -1,16 +1,9 @@
-/* Defines get status action and message. */
+/* Defines DPKM message for retrieving node status. */
 
 #version 4
 #version 5
 #version 6
 
-struct of_action_dpkm_get_status : of_action_dpkm {
-    uint16_t type == 65535;
-    uint16_t len;
-    uint32_t experimenter == 0xa20a0323; 
-    uint32_t subtype == 4;
-    of_octets_t data;    
-};
 
 struct of_dpkm_get_status : of_dpkm_header {
     uint8_t version;

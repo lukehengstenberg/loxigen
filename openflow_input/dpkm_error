@@ -1,8 +1,9 @@
-/* Defines WireGuard error messages */
+/* Defines OVS/WireGuard DPKM error messages. */
 #version 4
 #version 5
 #version 6
 
+/* Failed to decode DPKM_SET_KEY message. */
 struct of_dpkm_decode_set_key_error : of_dpkm_base_error {
     uint8_t version;
     uint8_t type == 1;
@@ -14,6 +15,7 @@ struct of_dpkm_decode_set_key_error : of_dpkm_base_error {
     of_octets_t data;       
 };
 
+/* Failed to decode DPKM_DELETE_KEY message. */
 struct of_dpkm_decode_delete_key_error : of_dpkm_base_error {
     uint8_t version;
     uint8_t type == 1;
@@ -25,6 +27,7 @@ struct of_dpkm_decode_delete_key_error : of_dpkm_base_error {
     of_octets_t data;       
 };
 
+/* Failed to decode DPKM_ADD_PEER message. */
 struct of_dpkm_decode_add_peer_error : of_dpkm_base_error {
     uint8_t version;
     uint8_t type == 1;
@@ -36,6 +39,7 @@ struct of_dpkm_decode_add_peer_error : of_dpkm_base_error {
     of_octets_t data;       
 };
 
+/* Failed to decode DPKM_DELETE_PEER message. */
 struct of_dpkm_decode_delete_peer_error : of_dpkm_base_error {
     uint8_t version;
     uint8_t type == 1;
@@ -47,6 +51,7 @@ struct of_dpkm_decode_delete_peer_error : of_dpkm_base_error {
     of_octets_t data;       
 };
 
+/* Failed to decode DPKM_GET_STATUS message. */
 struct of_dpkm_decode_get_status_error : of_dpkm_base_error {
     uint8_t version;
     uint8_t type == 1;
@@ -58,6 +63,7 @@ struct of_dpkm_decode_get_status_error : of_dpkm_base_error {
     of_octets_t data;       
 };
 
+/* Failed to execute WG configuration script. */
 struct of_dpkm_execute_set_key_error : of_dpkm_base_error {
     uint8_t version;
     uint8_t type == 1;
@@ -69,6 +75,7 @@ struct of_dpkm_execute_set_key_error : of_dpkm_base_error {
     of_octets_t data;       
 };
 
+/* Failed to execute WG unconfigure script. */
 struct of_dpkm_execute_delete_key_error : of_dpkm_base_error {
     uint8_t version;
     uint8_t type == 1;
@@ -80,6 +87,7 @@ struct of_dpkm_execute_delete_key_error : of_dpkm_base_error {
     of_octets_t data;       
 };
 
+/* Failed to execute WG add peer script. */
 struct of_dpkm_execute_add_peer_error : of_dpkm_base_error {
     uint8_t version;
     uint8_t type == 1;
@@ -91,6 +99,7 @@ struct of_dpkm_execute_add_peer_error : of_dpkm_base_error {
     of_octets_t data;       
 };
 
+/* Failed to execute WG delete peer script. */
 struct of_dpkm_execute_delete_peer_error : of_dpkm_base_error {
     uint8_t version;
     uint8_t type == 1;
@@ -102,6 +111,7 @@ struct of_dpkm_execute_delete_peer_error : of_dpkm_base_error {
     of_octets_t data;       
 };
 
+/* Failed when trying to retrieve the public key. */
 struct of_dpkm_get_key_error : of_dpkm_base_error {
     uint8_t version;
     uint8_t type == 1;
@@ -113,6 +123,7 @@ struct of_dpkm_get_key_error : of_dpkm_base_error {
     of_octets_t data;       
 };
 
+/* Failed when trying to retrieve the ipv4 addr of switch. */
 struct of_dpkm_get_ip_s_error : of_dpkm_base_error {
     uint8_t version;
     uint8_t type == 1;
@@ -124,6 +135,7 @@ struct of_dpkm_get_ip_s_error : of_dpkm_base_error {
     of_octets_t data;       
 };
 
+/* Failed when trying to retrieve the ipv4 addr of WG. */
 struct of_dpkm_get_ip_wg_error : of_dpkm_base_error {
     uint8_t version;
     uint8_t type == 1;
@@ -135,6 +147,7 @@ struct of_dpkm_get_ip_wg_error : of_dpkm_base_error {
     of_octets_t data;       
 };
 
+/* Message is missing value for field public key. */
 struct of_dpkm_missing_key_error : of_dpkm_base_error {
     uint8_t version;
     uint8_t type == 1;
@@ -146,6 +159,7 @@ struct of_dpkm_missing_key_error : of_dpkm_base_error {
     of_octets_t data;       
 };
 
+/* Message is missing value for field switch ipv4 addr. */
 struct of_dpkm_missing_ip_s_error : of_dpkm_base_error {
     uint8_t version;
     uint8_t type == 1;
@@ -157,6 +171,7 @@ struct of_dpkm_missing_ip_s_error : of_dpkm_base_error {
     of_octets_t data;       
 };
 
+/* Message is missing value for field WG ipv4 addr. */
 struct of_dpkm_missing_ip_wg_error : of_dpkm_base_error {
     uint8_t version;
     uint8_t type == 1;

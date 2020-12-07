@@ -1,6 +1,6 @@
 /* 
  * oxm-dpkm:
- * Match on DPKM method 
+ * Flow matching on DPKM method. 
  */
 #version 3
 #version 4

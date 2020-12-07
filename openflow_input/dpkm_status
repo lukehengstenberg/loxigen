@@ -1,4 +1,4 @@
-/* Defines status WireGuard message. */
+/* Defines DPKM message containing node status. */
 
 #version 4
 #version 5
